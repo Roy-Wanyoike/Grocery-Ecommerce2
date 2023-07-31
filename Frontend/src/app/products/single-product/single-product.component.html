@@ -1,0 +1,22 @@
+<div class="spinner" *ngIf="isLoading">
+
+    <app-spinner ></app-spinner>
+</div>
+
+<div *ngFor="let product of products" class="container">
+    <div class="product-image">
+        <img [src]="product.product_image_url" [alt]="product.name">
+    </div>
+    <div class="product-details">
+        <h3>{{product.name}}</h3>
+        <div class="description">
+            <p>{{product.description}}</p>
+        </div>
+        <div class="price">
+            <p>{{product.price | currency: 'Ksh'}}</p>
+        </div>
+        <div class="add-btn">
+            <button (click)="addToCart(products[0])">Add to cart</button>
+        </div>
+    </div>
+</div>

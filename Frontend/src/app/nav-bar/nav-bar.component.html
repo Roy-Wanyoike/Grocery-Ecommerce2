@@ -1,0 +1,50 @@
+<nav #nav (click)="onScroll($event)">
+    <div class="upper">
+        <div class="brand-name">
+            <a routerLink="/">Evergreens</a>
+        </div>
+        <div class="search-bar">
+            <div class="search">
+                <p>All Categories</p>
+                <form>
+                    <input type="text" placeholder="Search" />
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+        <div class="cart-person ">
+            <a routerLink="/cart">
+
+                <mat-icon class="cart">shopping_cart</mat-icon>
+            </a>
+            <p id="number-of-items">{{cartItems}}</p>
+
+            <a routerLink="/login" class="signups">
+                login
+
+            </a>
+            <a routerLink="/register" class="signups">
+                Register
+
+            </a>
+
+        </div>
+    </div>
+    <div class="lower">
+        <div class="menu" #menu>
+            <button (click)="toggleMenu()">
+                <mat-icon class="menu-icon">menu</mat-icon>
+            </button>
+        </div>
+        <div class="lower-links show" #links>
+            <button> shop </button>
+            <a routerLink="/products">meat & seafood</a>
+            <a routerLink="/products">Drinks</a>
+            <a routerLink="/products">Fruits & Vegetables</a>
+            <a routerLink="/products">contact us</a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,50 @@
+<!-- <div class="container">
+    <div class="nav">
+        <a href="">
+
+        </a>
+        <a href="">
+
+        </a><a href="">
+
+        </a>
+        <a href="">
+
+        </a>
+    </div>
+
+    <div *ngFor="let product of products" class="product-card">
+        
+        <div class="image-container">
+            <img [src]="product.imgUrl" alt="">
+        </div>
+        <div class="product-name">
+            <a [routerLink]="['/products',product.productId]">
+                <p>{{product.name}}</p>
+            </a>
+            
+        </div>
+        <div class="product-description">
+            <p>{{product.description}}</p>
+        </div>
+        <div class="btn-container">
+            <p>{{product.price | currency : 'Ksh'}}</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+</div> -->
+
+<div *ngIf=" isLoading" class="spinner">
+    <app-spinner></app-spinner>
+</div>
+
+
+<div class="products" *ngIf="!isLoading">
+    <h2>All products</h2>
+    <div class="all-products">
+     
+            <app-one-product *ngFor="let product of products"  [product]="product" [routerLink]="['/products',product.id]"></app-one-product>
+    
+    </div>
+    
+</div>
