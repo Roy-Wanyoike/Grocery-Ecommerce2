@@ -1,0 +1,379 @@
+
+### 1. Get all users
+GET  http://localhost:4000/api/users
+
+### 2. Get a user by id
+GET   http://localhost:4000/api/users/8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8
+
+
+### 3. Create a user
+
+POST   http://localhost:4000/api/users/register
+Content-Type: application/json
+
+
+
+{
+    "email": "onesmuswambugu135@gmail.com",
+    "password": "123456",
+    "phone":"0710383551"
+}
+
+
+### 4. Update a user
+
+PUT   http://localhost:4000/api/users/f73f701b-6115-457c-880f-f454206b9ddc
+Content-Type: application/json
+
+{
+    "id": "f73f701b-6115-457c-880f-f454206b9ddc",
+    "email": "sinceianmike@gmail.com",
+    "password": "123456",
+    "created_at": "2023-03-01T00:00:00.000Z",
+    "is_admin": true,
+    "is_deleted": false,
+    "phone": "0710383551",
+    "is_sent": true
+  }
+  
+
+
+### 5. Delete a user
+
+DELETE   http://localhost:4000/api/users/3711d8fc-0fed-49c4-a019-f03c862ecf92
+
+### 6. Login a user
+
+POST   http://localhost:4000/api/users/login
+Content-Type: application/json
+
+{
+   "email": "onesmus1024@gmail.com",
+    "password": "123456"
+}
+
+
+### 7. Get all products
+
+GET   https://ridespark.ml/api/products
+
+
+### 8. Get a product by id
+GET   http://localhost:4000/api/products/1
+
+
+### 9. Create a product
+
+POST  http://localhost:4000/api/products
+Content-Type: application/json
+
+{
+    "name": "Green Capsicum",
+    "description":"Capsicum green is used either chopped and raw in salads, or cooked in stir-fries or other mixed dishes. They are slightly bitter in taste and crunchy in texture.",
+    "price": 120,
+    "category_id": "5afac669-aa18-4c9d-90c9-265067b10450",
+    "product_image_url":"https://s3.eu-west-1.amazonaws.com/s.keekapu.com/keekapu-web-pics/capsicum-green-5B6387AC-CA0E-4AF2-9912-20182D376BCF.jpg",
+    "recently_added":"1",
+    "featured":"1",
+    "is_deleted":"0"
+
+}
+
+### 10. Update a product
+
+PUT   http://localhost:4000/api/products/1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "name": "test",
+    "description":"test",
+    "price": 100,
+    "category_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "product_image_url":"test",
+    "recently_added":"1",
+    "featured":"1",
+    "is_deleted":"0"
+}
+
+
+### 11. Delete a product
+
+DELETE   http://localhost:4000/api/products/72836104-8256-4264-aa67-0c024aaa62d3
+
+
+### 12. product by category
+
+GET   http://localhost:4000/api/products/category/12857889-5b30-46e7-b76c-5547e6166499
+
+
+### 13. Get product that belong to a top level category
+
+GET   http://localhost:4000/api/products/category/top/level
+
+
+### 14. Get all categories
+
+GET   http://localhost:4000/api/categories
+
+### 15. create a category
+
+POST   http://localhost:4000/api/categories
+Content-Type: application/json
+
+{
+    "name": "Fruits & Vegetables",
+    "is_top_level": "1"
+}
+
+### 16. Get a category by name
+
+GET   http://localhost:4000/api/categories/name/sofa
+
+
+### 17. Get a category by id
+
+GET   http://localhost:4000/api/categories/12857889-5b30-46e7-b76c-5547e6166499
+
+
+
+### cartItems API
+
+### 1. Get all cartItems
+
+
+### 2. Get a cartItem by user id
+
+GET   http://localhost:3002/api/cartitems
+
+
+### 3. Create a cartItem include token in header
+
+POST   http://localhost:4000/api/cartitems
+Content-Type: application/json
+
+{
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "1",
+    "quantity": "1"
+}
+
+
+### 4. Update a cartItem
+
+PUT   http://localhost:4000/api/cartitems
+Content-Type: application/json
+
+{
+    "id":"7db1ec45-c49b-4c4b-8bc7-e5ca2b3b01eb64",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "12857889-5b30-46e7-b76c-554n7e6166499",
+    "quantity": "1"
+}
+
+### 5. Delete a cartItem
+
+DELETE   http://localhost:4000/api/cartitems/7db1ec45-c49b-4c4b-8bc7-e5ca2b301e64
+
+
+### removeOrUpdateQuantity 
+
+put  http://localhost:4000/api/cartitems/removeOrReduceQuantity/7db1ec45-c49b-4c4b-8bc7-e5ca2b301e64
+Content-Type: application/json
+
+{
+    "id": "4b523aa4-16ab-4c20-a58f-33ef70a04bb8",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "quantity": "1"
+}
+
+
+### 6. Get all orders
+
+GET   http://localhost:4000/api/orders
+
+
+### 7. Get an order by id
+
+GET   http://localhost:4000/api/orders/bbf7cc2d-e741-430f-acea-75dd40319ec5
+
+
+### 8. Create an order
+
+POST   http://localhost:4000/api/orders
+Content-Type: application/json
+
+
+
+{
+    "user_id": "5abc6e23-9e9f-4ac4-bb7e-854c46b9a1ae",
+    "is_paid": "0",
+    "is_delivered": "0",
+    "amount": "100"
+}
+
+
+### 9. Update an order
+
+PUT   http://localhost:4000/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
+Content-Type: application/json
+
+{
+    "id": "a120ac52-2098-4ee8-936e-fbf627bc1fe7",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "is_paid": "0",
+    "is_delivered": "0",
+    "amount": "100"
+}
+
+### 10. Delete an order
+
+DELETE   http://localhost:4000/api/orders/0463a6d5-50f5-437e-b034-5c9ea1b21cea
+
+### get by user id
+
+GET   http://localhost:4000/api/orders/user/8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8
+
+
+
+#### create review
+
+POST   http://localhost:4000/api/reviews
+Content-Type: application/json
+
+{
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "rating": "5",
+    "review": "test",
+    "is_deleted": "0"
+}
+
+#### get review by product id
+
+GET   http://localhost:4000/api/reviews/product/12857889-5b30-46e7-b76c-5547e6166499
+
+
+#### update review
+
+PUT   http://localhost:4000/api/reviews
+Content-Type: application/json
+
+{
+    "id": "6ab4a8cf-890d-4fda-bef1-be399885cf5a",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "rating": "5",
+    "review": "test",
+    "is_deleted": "0"
+}
+
+#### delete review
+
+DELETE   http://localhost:4000/api/reviews/6ab4a8cf-890d-4fda-bef1-be399885cf5a
+
+
+
+#### payment method api
+
+#### get all payment methods
+
+GET   http://localhost:4000/api/paymentmethods
+
+
+#### get payment method by id
+
+GET   http://localhost:4000/api/paymentmethods/12857889-5b30-46e7-b76c-5547e6166499
+
+
+
+#### create payment method
+
+POST   http://localhost:4000/api/paymentmethods
+Content-Type: application/json
+
+{
+    "name": "M-pesa",
+    "description": "M-pesa payment method"
+
+}
+
+
+#### update payment method
+
+PUT   http://localhost:4000/api/paymentmethods
+Content-Type: application/json
+
+{
+    "id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "name": "M-pesa",
+    "description": "M-pesa payment method"
+
+}
+
+
+#### get payment method by id
+
+GET   http://localhost:4000/api/paymentmethods/12857889-5b30-46e7-b76c-5547e6166499
+
+
+### patymeent api
+
+#### create payment
+
+POST   http://localhost:4000/api/payments
+Content-Type: application/json
+
+{
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
+    "payment_method_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "amount": "100"
+}
+
+
+#### update payment
+
+PUT   http://localhost:4000/api/payments
+Content-Type: application/json
+
+{
+    "id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
+    "payment_method_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "amount": "100"
+}
+
+
+### order item api
+
+#### create order item
+
+POST   http://localhost:4000/api/orderitems
+Content-Type: application/json
+{
+  
+  "order_id": "a03bdc5d-9207-4201-948e-4e6f2cef755b",
+  "product_id": "6f1f3556-cdbe-4a14-8a7c-67c123412668",
+  "quantity": "3"
+}
+
+### update order item
+
+
+PUT   http://localhost:4000/api/orderitems/12857889-5b30-46e7-b76c-5547e6166499
+Content-Type: application/json
+
+{
+    "id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "quantity": "1"
+}
+
+
+#### get order item by id
+
+GET   http://localhost:4000/api/orderitems/12857889-5b30-46e7-b76c-5547e6166499
